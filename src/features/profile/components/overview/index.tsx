@@ -1,0 +1,65 @@
+import { GlobeIcon, MapPinIcon } from "lucide-react";
+
+import { USER } from "@/features/profile/data/user";
+import { urlToName } from "@/utils/url";
+
+import { Panel, PanelContent } from "../panel";
+import { EmailItem } from "./email-item";
+import {
+  IntroItem,
+  IntroItemContent,
+  IntroItemIcon,
+  IntroItemLink,
+} from "./intro-item";
+import { JobItem } from "./job-item";
+import { PhoneItem } from "./phone-item";
+
+export function Overview() {
+  return (
+    <Panel>
+      <h2 className="sr-only">Overview</h2>
+
+      <PanelContent className="space-y-2.5">
+        <JobItem
+          title={USER.jobs[0].title}
+          company={USER.jobs[0].company}
+          website={USER.jobs[0].website}
+        />
+
+        <div className="grid gap-x-12 gap-y-2.5 sm:grid-cols-2">
+          <IntroItem>
+            <IntroItemIcon>
+              <MapPinIcon />
+            </IntroItemIcon>
+            <IntroItemContent>
+              <IntroItemLink
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(USER.address)}`}
+                aria-label={`Location: ${USER.address}`}
+              >
+                {USER.address}
+              </IntroItemLink>
+            </IntroItemContent>
+          </IntroItem>
+
+          <EmailItem email={USER.email} />
+
+          <PhoneItem phoneNumber={USER.phoneNumber} />
+
+          <IntroItem>
+            <IntroItemIcon>
+              <GlobeIcon />
+            </IntroItemIcon>
+            <IntroItemContent>
+              <IntroItemLink
+                href={USER.website}
+                aria-label={`Personal website: ${urlToName(USER.website)}`}
+              >
+                {urlToName(USER.website)}
+              </IntroItemLink>
+            </IntroItemContent>
+          </IntroItem>
+        </div>
+      </PanelContent>
+    </Panel>
+  );
+}
