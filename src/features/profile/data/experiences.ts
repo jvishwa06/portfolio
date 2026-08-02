@@ -2,6 +2,23 @@ import type { Experience } from "../types/experiences";
 
 export const EXPERIENCES: Experience[] = [
   {
+    id: "square-yards",
+    companyName: "SQUARE YARDS",
+    positions: [
+      {
+        id: "ai-engineer",
+        title: "AI Engineer",
+        employmentPeriod: {
+          start: "07.2026",
+        },
+        employmentType: "Full-time",
+        icon: "code",
+        isExpanded: true,
+      },
+    ],
+    isCurrentEmployer: true,
+  },
+  {
     id: "hyperverge",
     companyName: "HYPERVERGE",
     companyLogo: "/images/experience/hyperverge.png",
@@ -10,8 +27,8 @@ export const EXPERIENCES: Experience[] = [
         id: "sde-intern",
         title: "Software Development Engineer",
         employmentPeriod: {
-          start: "07.2025",
-          end: "Present",
+          start: "06.2025",
+          end: "06.2026",
         },
         employmentType: "Internship",
         icon: "code",
@@ -32,7 +49,6 @@ export const EXPERIENCES: Experience[] = [
         isExpanded: true,
       },
     ],
-    isCurrentEmployer: true,
     theme: true,
   },
   {
@@ -73,8 +89,8 @@ export const EXPERIENCES: Experience[] = [
         id: "ml-trainee",
         title: "Machine Learning Engineer",
         employmentPeriod: {
-          start: "06.2023",
-          end: "01.2025",
+          start: "01.2023",
+          end: "05.2025",
         },
         employmentType: "Trainee",
         icon: "code",
