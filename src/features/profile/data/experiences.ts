@@ -4,12 +4,14 @@ export const EXPERIENCES: Experience[] = [
   {
     id: "square-yards",
     companyName: "SQUARE YARDS",
+    companyLogo: "/images/experience/square-yards.jpeg",
     positions: [
       {
         id: "ai-engineer",
         title: "AI Engineer",
         employmentPeriod: {
           start: "07.2026",
+          end: "Present",
         },
         employmentType: "Full-time",
         icon: "code",
